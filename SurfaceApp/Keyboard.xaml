@@ -1,0 +1,191 @@
+﻿<UserControl x:Class="SurfaceApp.Keyboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:s="http://schemas.microsoft.com/surface/2008"
+             mc:Ignorable="d" Background="Black"
+             d:DesignHeight="393" d:DesignWidth="947" Loaded="UserControl_Loaded">
+
+    <UserControl.Resources>
+        <Style TargetType="s:SurfaceButton">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="Margin" Value="6,6,0,0" />
+            <Setter Property="Background" Value="#444" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="Segoe UI" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0,0,6,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width=".5*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width=".5*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width=".5*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width=".5*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <s:SurfaceButton Content="www." Tag="www." Grid.Column="1" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content=".com" Tag=".com" Grid.Column="3" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content=".edu" Tag=".edu" Grid.Column="5" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content=".us" Tag=".us" Grid.Column="7" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="Wiki" Tag="http://en.wikipedia.org/wiki/" Grid.Column="9" Click="SurfaceButton2_Click" FontSize="18" />
+        </Grid>
+        <Grid Grid.Row="1" Margin="0,0,6,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <s:SurfaceButton Content="1" Tag="1" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="2" Tag="2" Grid.Column="1" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="3" Tag="3" Grid.Column="2" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="4" Tag="4" Grid.Column="3" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="5" Tag="5" Grid.Column="4" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="6" Tag="6" Grid.Column="5" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="7" Tag="7" Grid.Column="6" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="8" Tag="8" Grid.Column="7" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="9" Tag="9" Grid.Column="8" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="0" Tag="0" Grid.Column="9" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="-" Tag="-" Grid.Column="10" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="=" Tag="=" Grid.Column="11" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="&#9003;" Tag="&#9003;" Grid.Column="12" Click="Backspace_Button" FontSize="18" />
+        </Grid>        
+        <Grid Grid.Row="2" Margin="0,0,6,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".5*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width=".5*" />
+            </Grid.ColumnDefinitions>
+            <s:SurfaceButton Content="Q" Tag="Q" Grid.Column="1" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="W" Tag="W" Grid.Column="2" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="E" Tag="E" Grid.Column="3" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="R" Tag="R" Grid.Column="4" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="T" Tag="T" Grid.Column="5" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="Y" Tag="Y" Grid.Column="6" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="U" Tag="U" Grid.Column="7" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="I" Tag="I" Grid.Column="8" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="O" Tag="O" Grid.Column="9" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="P" Tag="P" Grid.Column="10" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="[" Tag="[" Grid.Column="11" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="]" Tag="]" Grid.Column="12" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="\" Tag="\" Grid.Column="13" Click="SurfaceButton_Click" FontSize="18" />
+        </Grid>
+        <Grid Grid.Row="3" Margin="0,0,6,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <s:SurfaceButton Content="A" Tag="A" Grid.Column="1" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="S" Tag="S" Grid.Column="2" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="D" Tag="D" Grid.Column="3" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="F" Tag="F" Grid.Column="4" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="G" Tag="G" Grid.Column="5" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="H" Tag="H" Grid.Column="6" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="J" Tag="J" Grid.Column="7" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="K" Tag="K" Grid.Column="8" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="L" Tag="L" Grid.Column="9" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content=";" Tag=";" Grid.Column="10" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="'" Tag="'" Grid.Column="11" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="Enter ↵" Tag="Enter ↵" Grid.Column="12" Click="Enter_Button" FontSize="18" />
+        </Grid>
+        <Grid Grid.Row="4" Margin="0,0,6,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="1.5*" />
+            </Grid.ColumnDefinitions>
+            <s:SurfaceButton Content="&#8679;" Tag="&#8679;" Click="Button_Click" FontSize="18" />
+            <s:SurfaceButton Content="Z" Tag="Z" Grid.Column="1" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="X" Tag="X" Grid.Column="2" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="C" Tag="C" Grid.Column="3" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="V" Tag="V" Grid.Column="4" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="B" Tag="B" Grid.Column="5" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="N" Tag="N" Grid.Column="6" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="M" Tag="M" Grid.Column="7" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="," Tag="," Grid.Column="8" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="." Tag="." Grid.Column="9" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="/" Tag="/" Grid.Column="10" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="?" Tag="?" Grid.Column="11" Click="SurfaceButton_Click" FontSize="18" />
+            <s:SurfaceButton Content="&#8679;" Tag="&#8679;" Grid.Column="12" Click="Button_Click" FontSize="18" />
+        </Grid>
+        <Grid Grid.Row="5" Margin="0,0,6,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="9*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="1.5*" />
+            </Grid.ColumnDefinitions>
+            <s:SurfaceButton Content="Hide" x:Name="Hide1" Tag="Hide" FontSize="12" Click="SurfaceButton_Hide_Click" />
+            <s:SurfaceButton Content="Space" x:Name="Spc" Tag="Space" Grid.Column="1" FontSize="12" Click="SurfaceButton_Click_1" Foreground="#50FFFFFF" />
+            <s:SurfaceButton Content="←" x:Name="Lar" Tag="←" Grid.Column="2" Click="Caret_Backward" FontSize="18" />
+            <s:SurfaceButton Content="→" x:Name="Rar" Tag="→" Grid.Column="3" Click="Caret_Forward" FontSize="18" />
+            <s:SurfaceButton Content="Hide" x:Name="Hide2" Tag="Hide" Grid.Column="4" FontSize="12" Click="SurfaceButton_Hide_Click" />
+        </Grid>
+    </Grid>
+</UserControl>
