@@ -80,7 +80,10 @@ namespace SurfaceApp
         void button_Click(object sender, RoutedEventArgs e)
         {
             if (_help.Visibility == System.Windows.Visibility.Visible)
+            {
                 return;
+            }
+            else { }
 
             _help.Visibility = System.Windows.Visibility.Visible;
 

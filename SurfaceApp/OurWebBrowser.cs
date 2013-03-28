@@ -208,7 +208,7 @@ namespace SurfaceApp
 
         void keyBoardHidden(object sender, EventArgs e)
         {
-            base.RowDefinitions[2].Height = new GridLength(20, GridUnitType.Pixel);
+            base.RowDefinitions[2].Height = new GridLength(60, GridUnitType.Pixel);
         }
 
         void keyBoardShown(object sender, EventArgs e)
