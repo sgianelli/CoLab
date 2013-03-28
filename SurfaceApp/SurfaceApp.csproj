@@ -120,7 +120,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AbstractKeyboard.cs" />
     <Compile Include="BookItem.cs" />
+    <Compile Include="NumKeyboard.xaml.cs">
+      <DependentUpon>NumKeyboard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExternalContentManager.cs" />
     <Compile Include="ImageButton.cs" />
     <Compile Include="ISBNField.cs" />
@@ -137,6 +141,10 @@
     <Compile Include="WebScreenshots.cs" />
     <Compile Include="WebsiteLink.cs" />
     <Compile Include="Whiteboard.cs" />
+    <Page Include="NumKeyboard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Keyboard.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

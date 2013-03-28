@@ -20,12 +20,12 @@ namespace SurfaceApp
 {
     public class KeyboardTextInput
     {
-        private Keyboard k;
+        private AbstractKeyboard k;
         private SurfaceTextBox t;
 
         public bool Enabled = false;
 
-        public KeyboardTextInput(Keyboard k, SurfaceTextBox t)
+        public KeyboardTextInput(AbstractKeyboard k, SurfaceTextBox t)
         {
             this.k = k;
             this.t = t;

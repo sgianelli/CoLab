@@ -111,7 +111,7 @@ namespace SurfaceApp
             base.Children.Add(kb);
         }
 
-        public Keyboard kb;
+        public AbstractKeyboard kb;
 
         KeyboardWebInput kbwi;
         KeyboardTextInput kbti;

@@ -18,7 +18,7 @@ namespace SurfaceApp
     /// <summary>
     /// Interaction logic for Keyboard.xaml
     /// </summary>
-    public partial class Keyboard : UserControl
+    public partial class Keyboard : AbstractKeyboard
     {
 
         public static readonly DependencyProperty IsURLProp = DependencyProperty.Register("IsURL", typeof(Boolean), typeof(Keyboard));
@@ -33,6 +33,7 @@ namespace SurfaceApp
 
         public Keyboard()
         {
+
             InitializeComponent();
 
             ShiftedKeys.Add('1', '!');
@@ -103,38 +104,9 @@ namespace SurfaceApp
             }
         }
 
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        public void SurfaceButton_Click(object sender, RoutedEventArgs e)
         {
-            Render_Keys();
-        }
-
-
-        public class KeyEventArgs : EventArgs
-        {
-            public String Str { get; private set; }
-            public KeyEventArgs(String c)
-            {
-                Str = c;
-            }
-        }
-
-        public event EventHandler<KeyEventArgs> KeyPressed;
-        public event EventHandler CharacterDeleted;
-        public event EventHandler EnterPressed;
-
-        public event EventHandler KeyboardHidden;
-        public event EventHandler KeyboardShown;
-
-        public event EventHandler CaretMovedForward;
-        public event EventHandler CaretMovedBackward;
-
-        public event EventHandler SelectionMovedForward;
-        public event EventHandler SelectionMovedBackward;
-
-        private void SurfaceButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (KeyPressed == null) return;
-            KeyPressed(this, new KeyEventArgs(((Button)sender).Content.ToString()));
+            AllButtons_Click(sender, e);
             if (isShift)
             {
                 isShift = false;
@@ -142,56 +114,9 @@ namespace SurfaceApp
             }
         }
 
-        private void SurfaceButton2_Click(object sender, RoutedEventArgs e)
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            if (KeyPressed == null) return;
-            KeyPressed(this, new KeyEventArgs(((Button)sender).Tag.ToString()));
-        }
-
-        private void Enter_Button(object sender, RoutedEventArgs e)
-        {
-            if (EnterPressed == null) return;
-            EnterPressed(this, EventArgs.Empty);
-        }
-
-        private void Backspace_Button(object sender, RoutedEventArgs e)
-        {
-            if (CharacterDeleted == null) return;
-            CharacterDeleted(this, EventArgs.Empty);
-        }
-
-        private void Caret_Forward(object sender, RoutedEventArgs e)
-        {
-            if (isShift)
-            {
-                if (CaretMovedForward == null) return;
-                SelectionMovedForward(this, EventArgs.Empty);
-            }
-            else
-            {
-                if (CaretMovedForward == null) return;
-                CaretMovedForward(this, EventArgs.Empty);
-            }
-        }
-
-        private void Caret_Backward(object sender, RoutedEventArgs e)
-        {
-            if (isShift)
-            {
-                if (CaretMovedBackward == null) return;
-                SelectionMovedBackward(this, EventArgs.Empty);
-            }
-            else
-            {
-                if (CaretMovedBackward == null) return;
-                CaretMovedBackward(this, EventArgs.Empty);
-            }
-        }
-
-        private void SurfaceButton_Click_1(object sender, RoutedEventArgs e)
-        {
-            if (KeyPressed == null) return;
-            KeyPressed(this, new KeyEventArgs(" "));
+            Render_Keys();
         }
 
         private bool isHidden = false;
@@ -217,8 +142,7 @@ namespace SurfaceApp
                 Hide1.Content = "Keyboard";
                 Hide2.Content = "Keyboard";
 
-                if (KeyboardHidden != null)
-                    KeyboardHidden(this, EventArgs.Empty);
+                keyboardV(true);
             }
             else
             {
@@ -234,9 +158,39 @@ namespace SurfaceApp
                 Hide1.Content = "Hide";
                 Hide2.Content = "Hide";
 
-                if (KeyboardShown != null)
-                    KeyboardShown(this, EventArgs.Empty);
+                keyboardV(false);
             }
         }
+
+        private void SurfaceButton2_Click(object sender, RoutedEventArgs e)
+        {
+            base.SurfaceButton2_Click(sender, e);
+        }
+
+        private void Enter_Button(object sender, RoutedEventArgs e)
+        {
+            base.Enter_Button(sender, e);
+        }
+
+        private void Backspace_Button(object sender, RoutedEventArgs e)
+        {
+            base.Backspace_Button(sender, e);
+        }
+
+        private void Caret_Forward(object sender, RoutedEventArgs e)
+        {
+            base.Caret_Forward(sender, e);
+        }
+
+        private void Caret_Backward(object sender, RoutedEventArgs e)
+        {
+            base.Caret_Backward(sender, e);
+        }
+
+        private void SurfaceButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            base.SurfaceButton_Click_1(sender, e);
+        }
+
     }
 }

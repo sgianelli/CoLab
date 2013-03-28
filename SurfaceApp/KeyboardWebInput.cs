@@ -21,12 +21,12 @@ namespace SurfaceApp
 {
     public class KeyboardWebInput
     {
-        private Keyboard k;
+        private AbstractKeyboard k;
         private WebControl w;
 
         public bool Enabled = false;
 
-        public KeyboardWebInput(Keyboard k, WebControl w)
+        public KeyboardWebInput(AbstractKeyboard k, WebControl w)
         {
             this.k = k;
             this.w = w;
@@ -65,7 +65,8 @@ namespace SurfaceApp
             if (!Enabled) return;
             String JSTR = "";
 
-            JSTR += "var t = document.activeElement;";
+            JSTR += "if(document.activeElement != document.getElementsByTagName('body')[0]) { document.___SURFACE_APP_FOCUS_ELEM___ = document.activeElement; }";
+            JSTR += "var t = document.___SURFACE_APP_FOCUS_ELEM___;";
             JSTR += "var selStar = t.selectionStart;";
             JSTR += "t.value = t.value.substring(0, selStar) + '" + e.Str.Replace("'", "\\'") + "' + t.value.substring(t.selectionEnd);";
             JSTR += "t.selectionStart = selStar + " + e.Str.Length + ";";
@@ -80,7 +81,8 @@ namespace SurfaceApp
 
             String JSTR = "";
 
-            JSTR += "var t = document.activeElement;";
+            JSTR += "if(document.activeElement != document.getElementsByTagName('body')[0]) { document.___SURFACE_APP_FOCUS_ELEM___ = document.activeElement; }";
+            JSTR += "var t = document.___SURFACE_APP_FOCUS_ELEM___;";
             JSTR += "if (t.value.Length == 0) return;";
             JSTR += "var selStar = t.selectionStart;";
             JSTR += "if (t.selectionEnd == t.selectionStart)";
@@ -105,7 +107,8 @@ namespace SurfaceApp
 
             String JSTR = "";
 
-            JSTR += "var t = document.activeElement;";
+            JSTR += "if(document.activeElement != document.getElementsByTagName('body')[0]) { document.___SURFACE_APP_FOCUS_ELEM___ = document.activeElement; }";
+            JSTR += "var t = document.___SURFACE_APP_FOCUS_ELEM___;";
             JSTR += "if (t.selectionStart <= 0) return;";
             JSTR += "t.selectionStart--;";
             JSTR += "t.selectionEnd = t.selectionStart;";
@@ -119,7 +122,8 @@ namespace SurfaceApp
 
             String JSTR = "";
 
-            JSTR += "var t = document.activeElement;";
+            JSTR += "if(document.activeElement != document.getElementsByTagName('body')[0]) { document.___SURFACE_APP_FOCUS_ELEM___ = document.activeElement; }";
+            JSTR += "var t = document.___SURFACE_APP_FOCUS_ELEM___;";
             JSTR += "t.selectionStart++;";
             JSTR += "t.selectionEnd = t.selectionStart;";
 
@@ -133,7 +137,8 @@ namespace SurfaceApp
             if (!Enabled) return;
 
             String JSTR = "";
-            JSTR += "var t = document.activeElement;";
+            JSTR += "if(document.activeElement != document.getElementsByTagName('body')[0]) { document.___SURFACE_APP_FOCUS_ELEM___ = document.activeElement; }";
+            JSTR += "var t = document.___SURFACE_APP_FOCUS_ELEM___;";
 
             if (w.ExecuteJavascriptWithResult("(document.activeElement.selectionEnd - document.activeElement.selectionStart);").ToString().Equals("0"))
                 selDir = -1;
@@ -156,7 +161,8 @@ namespace SurfaceApp
             if (!Enabled) return;
 
             String JSTR = "";
-            JSTR += "var t = document.activeElement;";
+            JSTR += "if(document.activeElement != document.getElementsByTagName('body')[0]) { document.___SURFACE_APP_FOCUS_ELEM___ = document.activeElement; }";
+            JSTR += "var t = document.___SURFACE_APP_FOCUS_ELEM___;";
 
             if (w.ExecuteJavascriptWithResult("(document.activeElement.selectionEnd - document.activeElement.selectionStart);").ToString().Equals("0"))
                 selDir = 0;

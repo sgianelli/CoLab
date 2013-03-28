@@ -31,7 +31,7 @@ namespace SurfaceApp
             };
             _grid.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
             _grid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(1, GridUnitType.Star) });
-            _grid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(280, GridUnitType.Pixel) });
+            _grid.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(230, GridUnitType.Pixel) });
 
             base.Content = _grid;
 
@@ -52,7 +52,7 @@ namespace SurfaceApp
             _grid.Children.Add(_isbnBox);
             _grid.Children.Add(_goButton);
 
-            Keyboard kb = new Keyboard();
+            AbstractKeyboard kb = new NumKeyboard();
             KeyboardTextInput kbti = new KeyboardTextInput(kb, _isbnBox);
             kbti.Enabled=true;
             //Grid.SetColumnSpan(kb, 2);
