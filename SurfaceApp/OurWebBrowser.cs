@@ -104,6 +104,9 @@ namespace SurfaceApp
             _webBrowser.GotFocus += webGotFocus;
             _webBrowser.LostFocus += webLostFocus;
 
+            kb.KeyboardHidden += keyBoardHidden;
+            kb.KeyboardShown += keyBoardShown;
+
             Grid.SetRow(kb, 2);
             base.Children.Add(kb);
         }
@@ -112,6 +115,7 @@ namespace SurfaceApp
 
         KeyboardWebInput kbwi;
         KeyboardTextInput kbti;
+
 
 
         public void LoadUrl(string url)
@@ -200,6 +204,16 @@ namespace SurfaceApp
         void webLostFocus(object sender, EventArgs e)
         {
             kbwi.Enabled = false;
+        }
+
+        void keyBoardHidden(object sender, EventArgs e)
+        {
+            base.RowDefinitions[2].Height = new GridLength(20, GridUnitType.Pixel);
+        }
+
+        void keyBoardShown(object sender, EventArgs e)
+        {
+            base.RowDefinitions[2].Height = new GridLength(280, GridUnitType.Pixel);
         }
 
         void _webBrowser_BeginLoading(object sender, BeginLoadingEventArgs e)
